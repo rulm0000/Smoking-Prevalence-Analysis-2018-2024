@@ -9,7 +9,7 @@ clear all
 set more off
 
 * Set working directory
-cd "C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output"
+cd "output"
 
 * Start log file
 log using "nationwide_clustered_logit_analysis.log", replace text
@@ -23,7 +23,7 @@ di "{hline 80}"
 di "LOADING NATIONWIDE BRFSS DATA (2018-2024)"
 di "{hline 80}"
 
-import delimited "C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\data\combinedbrfss_18_24v10.csv", clear
+import delimited "../data/combinedbrfss_18_24v10.csv", clear
 
 * Check data
 di ""

@@ -10,7 +10,7 @@
 ******************************************************************************/
 
 /* Set output location */
-ods html path="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output"
+ods html path="output"
          file="nationwide_genmod_gee_results.html" style=htmlblue;
 
 ods graphics on / reset=all imagename="gee_plot" imagefmt=png width=1200px height=800px;
@@ -21,7 +21,7 @@ ods graphics on / reset=all imagename="gee_plot" imagefmt=png width=1200px heigh
 
 title "Nationwide BRFSS Data Import (2018-2024)";
 
-proc import datafile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\data\combinedbrfss_18_24v10.csv"
+proc import datafile="data/combinedbrfss_18_24v10.csv"
     out=work.brfss_raw
     dbms=csv
     replace;
@@ -178,27 +178,27 @@ run;
 ******************************************************************************/
 
 proc export data=model1_params
-    outfile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\gee_model1_parameters.xlsx"
+    outfile="output/gee_model1_parameters.xlsx"
     dbms=xlsx replace;
 run;
 
 proc export data=model2_params
-    outfile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\gee_model2_parameters.xlsx"
+    outfile="output/gee_model2_parameters.xlsx"
     dbms=xlsx replace;
 run;
 
 proc export data=model3a_params
-    outfile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\gee_model3a_parameters.xlsx"
+    outfile="output/gee_model3a_parameters.xlsx"
     dbms=xlsx replace;
 run;
 
 proc export data=model3b_params
-    outfile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\gee_model3b_parameters.xlsx"
+    outfile="output/gee_model3b_parameters.xlsx"
     dbms=xlsx replace;
 run;
 
 proc export data=all_pred
-    outfile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\gee_predicted_probabilities.xlsx"
+    outfile="output/gee_predicted_probabilities.xlsx"
     dbms=xlsx replace;
 run;
 

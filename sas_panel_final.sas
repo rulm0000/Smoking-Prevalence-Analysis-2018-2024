@@ -5,8 +5,8 @@
 ******************************************************************************/
 
 * Define paths using %nrstr() to handle apostrophe;
-%let datafile = %nrstr(C:/Users/culm/OneDrive - University of North Carolina at Chapel Hill/OUHSC Backup 6.26.23/Projects/Master%'s Project/Results/Updated Analysis/data/combinedbrfss_18_24v10.csv);
-%let outdir = %nrstr(C:/Users/culm/OneDrive - University of North Carolina at Chapel Hill/OUHSC Backup 6.26.23/Projects/Master%'s Project/Results/Updated Analysis/output);
+%let datafile = data/combinedbrfss_18_24v10.csv;
+%let outdir = output;
 
 ods listing gpath="&outdir";
 ods graphics on / width=2400px height=1600px imagename="sas_panel_15entities" imagefmt=png;

@@ -10,7 +10,7 @@ clear all
 set more off
 
 * Set working directory
-cd "C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output"
+cd "output"
 
 * ==============================================================================
 * Define the 15 entities (FIPS codes)
@@ -39,7 +39,7 @@ foreach fips in `entity_fips' {
     di "Processing `row'/15: `entity_name' (FIPS: `fips')"
     di "{hline 80}"
 
-    qui import delimited "C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\data\combinedbrfss_18_24v10.csv", clear
+    qui import delimited "../data/combinedbrfss_18_24v10.csv", clear
 
     if `fips' != 0 {
         qui keep if _state == `fips'

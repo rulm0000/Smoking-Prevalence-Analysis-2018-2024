@@ -1,5 +1,5 @@
 /* Import the data */
-proc import datafile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\data\combinedbrfss_18_24v10.csv"
+proc import datafile="data/combinedbrfss_18_24v10.csv"
     out=work.CombinedBRFSS_18_24v10
     dbms=csv
     replace;

@@ -11,7 +11,7 @@
 ================================================================================*/
 
 /* Import CSV data */
-proc import datafile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\data\combinedbrfss_18_24v10.csv"
+proc import datafile="data/combinedbrfss_18_24v10.csv"
     out=work.CombinedBRFSS_18_24v10
     dbms=csv
     replace;
@@ -126,12 +126,12 @@ run;
 
 /* Export to CSV */
 proc export data = YearSlopes_All
-    outfile = "C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\tables\YearSlopes_v17_significant.csv"
+    outfile = "output/tables/YearSlopes_v17_significant.csv"
     dbms = csv replace;
 run;
 
 /* Export to Excel */
-ods excel file="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\reports\YearSlopes_v17_significant.xlsx";
+ods excel file="output/reports/YearSlopes_v17_significant.xlsx";
 proc print data=YearSlopes_All noobs;
     var State_Code State_Name Label ExpEstimate LowerExp UpperExp ProbT;
     title "Simple Slopes: Year Effect by URRU Level";

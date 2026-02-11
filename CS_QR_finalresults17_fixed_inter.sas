@@ -27,7 +27,7 @@
 ==============================================================================*/
 
 /* 1. Import CSV data */
-proc import datafile="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\data\combinedbrfss_18_24v10.csv"
+proc import datafile="data/combinedbrfss_18_24v10.csv"
     out=work.CombinedBRFSS_18_24v10
     dbms=csv
     replace;
@@ -347,7 +347,7 @@ run;
 ==============================================================================*/
 
 /* Open Excel output file */
-ods excel file="C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\reports\CS_QR_finalresults17_fixed_inter.xlsx";
+ods excel file="output/reports/CS_QR_finalresults17_fixed_inter.xlsx";
 
 /* Run nationwide model first */
 %put Running nationwide analysis...;
@@ -387,7 +387,7 @@ ods excel close;
 
 /* 1. Master results file with all details */
 proc export data=work.all_results
-    outfile="C:\Users\ulmcl\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Codex_Jules\output\tables\logistic_results_summary_v17_with_interaction.csv"
+    outfile="output/tables/logistic_results_summary_v17_with_interaction.csv"
     dbms=csv
     replace;
 run;
@@ -437,7 +437,7 @@ data work.urru_for_mapping;
 run;
 
 proc export data=work.urru_for_mapping
-    outfile = "C:\Users\culm\OneDrive - University of North Carolina at Chapel Hill\OUHSC Backup 6.26.23\Projects\Master's Project\Results\Updated Analysis\output\tables\logistic_or_by_state_v17.csv"
+    outfile = "output/tables/logistic_or_by_state_v17.csv"
     dbms=csv
     replace;
 run;
